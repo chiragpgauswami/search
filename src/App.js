@@ -79,19 +79,30 @@ function App() {
     e.preventDefault();
 
     var finalQuery = "";
+    var url = "";
+
     if (file.data == null) {
+      url = "https://www.google.com/search?q=" + encodeURIComponent(query);
+    } else if (file.data.id === 5) {
+      url =
+        "https://www.google.com/search?tbm=isch&q=" + encodeURIComponent(query);
+    } else if (file.data.id === 3) {
       finalQuery =
         query +
-        " -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)";
+        " +(" +
+        file.data.extension +
+        ") -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml)";
+      url = "https://www.google.com/search?q=" + encodeURIComponent(finalQuery);
+    } else if (file.data.id === 6) {
+      url = "https://www.google.com/search?q=" + encodeURIComponent(query);
     } else {
       finalQuery =
         query +
         " +(" +
         file.data.extension +
-        ") -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|index-of|wallywashis|downloadmana)";
+        ") -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml) intitle:index.of";
+      url = "https://www.google.com/search?q=" + encodeURIComponent(finalQuery);
     }
-    var url =
-      "https://www.google.com/search?q=" + encodeURIComponent(finalQuery);
 
     window.open(url, "_blank");
     // window.open(url, "_self");

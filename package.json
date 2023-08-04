@@ -1,5 +1,6 @@
 {
   "name": "search",
+  "homepage": "https://chiragpgauswami.github.io/search",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
