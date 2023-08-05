@@ -80,6 +80,9 @@ function App() {
 
     var finalQuery = "";
     var url = "";
+    if (query === "") {
+      return;
+    }
 
     if (file.data == null) {
       url = "https://www.google.com/search?q=" + encodeURIComponent(query);
@@ -106,7 +109,6 @@ function App() {
 
     window.open(url, "_blank");
     // window.open(url, "_self");
-
     setQuery("");
   };
 
