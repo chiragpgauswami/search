@@ -1,11 +1,11 @@
-import { BrowserRouter } from "react-router-dom";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { far } from "@fortawesome/free-regular-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import GIcon from "./assets/images/google-icon.png";
 import { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import GIcon from "./assets/images/google-icon.png";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -116,7 +116,7 @@ function App() {
     <BrowserRouter>
       <div
         style={{
-          "--image-url": `url(${"https://source.unsplash.com/random/1920x1080?nature-dark"})`,
+          "--image-url": `url(${"https://picsum.photos/1200/600?grayscale"})`,
         }}
         className="min-h-screen min-w-full bg-[image:var(--image-url)] bg-cover bg-center bg-no-repeat"
       >
